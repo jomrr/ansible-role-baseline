@@ -1,0 +1,15 @@
+---
+# role: ansible-role-baseline
+# file: tasks/gather_facts.yml
+
+- name: "Get facts for package manager"
+  become: false
+  raw: "hash {{ baseline_pkg_mgr.key }} && echo -n 1 || echo -n 0"
+  register: baseline_facts
+  check_mode: false
+  changed_when: false
+
+- name: "Set fact for package manager"
+  set_fact:
+      baseline_package_manager: "{{ baseline_pkg_mgr.key }}"
+  when: baseline_facts.stdout == "1"

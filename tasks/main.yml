@@ -1,0 +1,28 @@
+---
+# role: ansible-role-baseline
+# file: tasks/main.yml
+
+- name: "Import tasks for gather_facts"
+  include_tasks: gather_facts.yml
+  loop: "{{ baseline_cmd | dict2items }}"
+  loop_control:
+    loop_var: baseline_pkg_mgr
+
+- name: "Bootstrap with python3"
+  become: false
+  raw: "{{ baseline_cmd[baseline_package_manager] }} {{ baseline_pkg3[baseline_package_manager] }}"
+  check_mode: false
+  changed_when: false
+  ignore_errors: true
+  register: bootstrap_install_result
+
+- name: "Bootstrap with python2"
+  become: false
+  raw: "{{ baseline_cmd[baseline_package_manager] }} {{ baseline_pkg2[baseline_package_manager] }}"
+  check_mode: false
+  changed_when: false
+  when: bootstrap_install_result is failed
+
+# - name: "Debug release facts"
+#   debug:
+#     msg: "{{ baseline_package_manager }}"

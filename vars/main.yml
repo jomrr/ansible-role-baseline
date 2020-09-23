@@ -1,0 +1,27 @@
+---
+# role: ansible-role-baseline
+# file: vars/main.yml
+
+baseline_pkg3:
+  apk: "bash python3 sudo"
+  apt: "bash python3 python3-apt sudo"
+  dnf: "bash python38 sudo"
+  pacman: "bash python3 sudo"
+  yum: "bash python38 sudo"
+  zypper: "bash python3 python3-xml sudo"
+
+baseline_pkg2:
+  apk: "bash python2 sudo"
+  apt: "bash python python-apt sudo"
+  dnf: "bash python2 sudo"
+  pacman: "bash python sudo"
+  yum: "bash python sudo"
+  zypper: "bash python python-xml sudo"
+
+baseline_cmd:
+  apk: "LANG=C apk update && apk add"
+  apt: "LANG=C DEBIAN_FRONTEND=noninteractive apt -y update && apt -y install"
+  dnf: "LANG=C dnf -y update && dnf -y install"
+  pacman: "LANG=C pacman -Syyy && pacman -Syu --noconfirm && pacman -S --noconfirm"
+  yum: "LANG=C yum -y update && yum -y install"
+  zypper: "LANG=C zypper -n update && zypper -n install"

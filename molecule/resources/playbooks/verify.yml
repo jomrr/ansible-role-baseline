@@ -1,0 +1,10 @@
+---
+# role: ansible-role-baseline
+# file: molecule/resources/playbooks/verify.yml
+
+- name: Verify
+  hosts: all
+  become: true
+  tasks:
+    - name: "Gather facts"
+      gather_facts:
