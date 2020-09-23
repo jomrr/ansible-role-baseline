@@ -7,7 +7,4 @@
   become: true
   gather_facts: false
   roles:
-    # if you want to enable requirements put them in requirements.yml
-    # and add here
-    # - role: common
     - role: ansible-role-baseline

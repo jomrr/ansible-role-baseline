@@ -1,5 +1,7 @@
 # ansible-role-baseline
 
+![GitHub](https://img.shields.io/github/license/jam82/ansible-role-baseline) [![Build Status](https://travis-ci.org/jam82/ansible-role-baseline.svg?branch=master)](https://travis-ci.org/jam82/ansible-role-baseline)
+
 **Ansible role for bootstrapping a machine for configuration by ansible.**
 
 ## Supported Platforms

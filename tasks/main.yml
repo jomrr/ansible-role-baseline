@@ -22,7 +22,3 @@
   check_mode: false
   changed_when: false
   when: bootstrap_install_result is failed
-
-# - name: "Debug release facts"
-#   debug:
-#     msg: "{{ baseline_package_manager }}"
