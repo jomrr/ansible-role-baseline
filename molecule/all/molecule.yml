@@ -13,25 +13,25 @@ lint: |
 platforms:
   - name: baseline-alpine311
     image: "jam82/molecule-alpine:3.11"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
   - name: baseline-alpine
     image: "jam82/molecule-alpine:latest"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
   - name: baseline-amazonlinux
     image: "jam82/molecule-amazonlinux:latest"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -39,27 +39,19 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-arch
     image: "jam82/molecule-archlinux:latest"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-centos6
-    image: "jam82/molecule-centos:6"
-    override_command: False
-    pre_build_image: True
-    privileged: True
-    tmpfs:
-      - /tmp
-      - /run
   - name: baseline-centos7
     image: "jam82/molecule-centos:7"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -67,9 +59,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-centos8
     image: "jam82/molecule-centos:8"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -77,9 +69,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-debian9
     image: "jam82/molecule-debian:9"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -87,19 +79,19 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-debian10
     image: "jam82/molecule-debian:10"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-fedora32
-    image: "jam82/molecule-fedora:32"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    image: "jam82/molecule-fedora:33"
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -107,9 +99,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-fedora
     image: "jam82/molecule-fedora:latest"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -117,9 +109,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-opensuse15
     image: "jam82/molecule-opensuse:15"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -127,27 +119,19 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-opensuse-tumbleweed
     image: "jam82/molecule-opensuse:tumbleweed"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-oraclelinux6
-    image: "jam82/molecule-oraclelinux:6"
-    override_command: False
-    pre_build_image: True
-    privileged: True
-    tmpfs:
-      - /tmp
-      - /run
   - name: baseline-oraclelinux7
     image: "jam82/molecule-oraclelinux:7"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -155,19 +139,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-oraclelinux8
     image: "jam82/molecule-oraclelinux:8"
-    override_command: False
-    pre_build_image: True
-    privileged: True
-    tmpfs:
-      - /tmp
-      - /run
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-ubuntu1604
-    image: "jam82/molecule-ubuntu:16.04"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -175,9 +149,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-ubuntu1804
     image: "jam82/molecule-ubuntu:18.04"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -185,9 +159,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-ubuntu2004
     image: "jam82/molecule-ubuntu:20.04"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -195,9 +169,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: baseline-ubuntu
     image: "jam82/molecule-ubuntu:latest"
-    override_command: False
-    pre_build_image: True
-    privileged: True
+    override_command: false
+    pre_build_image: true
+    privileged: true
     tmpfs:
       - /tmp
       - /run
@@ -205,7 +179,7 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
 provisioner:
   name: ansible
-  log: True
+  log: true
   playbooks:
     converge: ../resources/playbooks/converge.yml
     verify: ../resources/playbooks/verify.yml
