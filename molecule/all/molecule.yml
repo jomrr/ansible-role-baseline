@@ -11,14 +11,6 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
-  - name: baseline-alpine311
-    image: "jam82/molecule-alpine:3.11"
-    override_command: false
-    pre_build_image: true
-    privileged: true
-    tmpfs:
-      - /tmp
-      - /run
   - name: baseline-alpine
     image: "jam82/molecule-alpine:latest"
     override_command: false
@@ -47,8 +39,8 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-centos7
-    image: "jam82/molecule-centos:7"
+  - name: baseline-centos
+    image: "jam82/molecule-centos:latest"
     override_command: false
     pre_build_image: true
     privileged: true
@@ -57,38 +49,8 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-centos8
-    image: "jam82/molecule-centos:8"
-    override_command: false
-    pre_build_image: true
-    privileged: true
-    tmpfs:
-      - /tmp
-      - /run
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-debian9
-    image: "jam82/molecule-debian:9"
-    override_command: false
-    pre_build_image: true
-    privileged: true
-    tmpfs:
-      - /tmp
-      - /run
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-debian10
-    image: "jam82/molecule-debian:10"
-    override_command: false
-    pre_build_image: true
-    privileged: true
-    tmpfs:
-      - /tmp
-      - /run
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-fedora32
-    image: "jam82/molecule-fedora:33"
+  - name: baseline-debian
+    image: "jam82/molecule-debian:latest"
     override_command: false
     pre_build_image: true
     privileged: true
@@ -107,8 +69,8 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-opensuse15
-    image: "jam82/molecule-opensuse:15"
+  - name: baseline-opensuse
+    image: "jam82/molecule-opensuse:latest"
     override_command: false
     pre_build_image: true
     privileged: true
@@ -127,38 +89,8 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-oraclelinux7
-    image: "jam82/molecule-oraclelinux:7"
-    override_command: false
-    pre_build_image: true
-    privileged: true
-    tmpfs:
-      - /tmp
-      - /run
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-oraclelinux8
-    image: "jam82/molecule-oraclelinux:8"
-    override_command: false
-    pre_build_image: true
-    privileged: true
-    tmpfs:
-      - /tmp
-      - /run
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-ubuntu1804
-    image: "jam82/molecule-ubuntu:18.04"
-    override_command: false
-    pre_build_image: true
-    privileged: true
-    tmpfs:
-      - /tmp
-      - /run
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-ubuntu2004
-    image: "jam82/molecule-ubuntu:20.04"
+  - name: baseline-oraclelinux
+    image: "jam82/molecule-oraclelinux:latest"
     override_command: false
     pre_build_image: true
     privileged: true

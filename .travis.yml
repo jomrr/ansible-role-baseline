@@ -27,7 +27,7 @@ env:
   - MOLECULE_DIST="jam82/molecule-ubuntu:20.04"
 
 install:
-  - pip install ansible-lint docker molecule molecule-docker yamllint
+  - pip install ansible ansible-lint docker molecule molecule-docker yamllint
 
 script:
   - molecule --version
