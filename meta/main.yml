@@ -3,9 +3,9 @@
 # file: meta/main.yml
 
 galaxy_info:
-  role_name: ansible-role-baseline
+  role_name: baseline
   author: jam82
-  description: Ansible role for setting up baseline.
+  description: Ansible role for bootstrapping a machine for configuration by ansible.
   company: ''
 
   # If the issue tracker for your role is not on github, uncomment the
