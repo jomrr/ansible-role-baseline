@@ -5,9 +5,9 @@
 baseline_pkg3:
   apk: "bash python3 sudo"
   apt: "bash python3 python3-apt sudo"
-  dnf: "bash python38 sudo"
+  dnf: "bash python3 sudo"
   pacman: "bash python3 sudo"
-  yum: "bash python38 sudo"
+  yum: "bash python3 sudo"
   zypper: "bash python3 python3-xml sudo"
 
 baseline_pkg2:

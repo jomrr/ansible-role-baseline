@@ -4,6 +4,8 @@
 
 dependency:
   name: galaxy
+  options:
+    role-file: requirements.yml
 driver:
   name: docker
 lint: |
@@ -11,9 +13,87 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
-  - name: baseline-default
-    image: ${MOLECULE_DIST:-"jam82/molecule-ubuntu:20.04"}
-    command: ${MOLECULE_DOCKER_CMD:-""}
+  - name: baseline-alpine
+    image: "jam82/molecule-alpine:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+  - name: baseline-amazonlinux
+    image: "jam82/molecule-amazonlinux:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-arch
+    image: "jam82/molecule-archlinux:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-centos
+    image: "jam82/molecule-centos:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-debian
+    image: "jam82/molecule-debian:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-fedora
+    image: "jam82/molecule-fedora:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-opensuse
+    image: "jam82/molecule-opensuse:15"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-tumbleweed
+    image: "jam82/molecule-opensuse:tumbleweed"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-oraclelinux
+    image: "jam82/molecule-oraclelinux:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - name: baseline-ubuntu
+    image: "jam82/molecule-ubuntu:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -27,5 +107,9 @@ provisioner:
   playbooks:
     converge: ../resources/playbooks/converge.yml
     verify: ../resources/playbooks/verify.yml
+  inventory:
+    group_vars:
+      all:
+        baseline_role_enabled: true
 verifier:
   name: ansible

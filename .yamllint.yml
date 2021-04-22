@@ -33,3 +33,9 @@ rules:
     type: unix
   trailing-spaces: enable
   truthy: disable
+
+ignore: |
+  .cache/
+  .tox/
+  .vscode/
+  .travis.yml
