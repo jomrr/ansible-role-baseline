@@ -18,14 +18,14 @@ env:
   global:
     - TOX_PARALLEL_NO_SPINNER=1
   matrix:
-    - TOX_IMG="alp" TOX_ANSIBLE="{29,210}"
-    - TOX_IMG="azn" TOX_ANSIBLE="{29,210}"
-    - TOX_IMG="cts" TOX_ANSIBLE="{29,210}"
-    - TOX_IMG="deb" TOX_ANSIBLE="{29,210}"
-    - TOX_IMG="fed" TOX_ANSIBLE="{29,210}"
-    - TOX_IMG="ora" TOX_ANSIBLE="{29,210}"
-    - TOX_IMG="osl" TOX_ANSIBLE="{29,210}"
-    - TOX_IMG="ubu" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="Alpine"    TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="Amazon"    TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="CentOS"    TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="Debian"    TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="Fedora"    TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="OpenSuse"  TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="Oracle"    TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="Ubuntu"    TOX_ANSIBLE="{29,210}"
 
 before_install:
   - python -m pip install --upgrade pip
