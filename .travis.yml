@@ -9,9 +9,23 @@ python:
 
 services: docker
 
+cache:
+  pip: true
+  directories:
+  - ".tox"
+
 env:
   global:
     - TOX_PARALLEL_NO_SPINNER=1
+  matrix:
+    - TOX_IMG="alp" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="azn" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="cts" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="deb" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="fed" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="ora" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="osl" TOX_ANSIBLE="{29,210}"
+    - TOX_IMG="ubu" TOX_ANSIBLE="{29,210}"
 
 before_install:
   - python -m pip install --upgrade pip
@@ -20,5 +34,7 @@ install:
   - pip install tox-travis
 
 script:
-  - tox -p 3 -o true
-
+  - tox -e $(echo py${TRAVIS_PYTHON_VERSION} | tr -d .)-an${TOX_ANSIBLE}-${TOX_IMG} -p 2 -o true
+  - |
+    rm -r .tox/py*/log/*                                                               
+    find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
