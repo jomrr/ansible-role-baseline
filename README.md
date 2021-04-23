@@ -6,16 +6,18 @@
 
 ## Supported Platforms
 
-- Alpine 3.11, 3.12
+- Alpine
 - Archlinux
-- CentOS 7, 8
-- Debian 9, 10
-- Fedora 31, 32
-- Ubuntu 18.04, 20.04
+- CentOS
+- Debian
+- Fedora
+- OpenSuse Leap
+- Oracle
+- Ubuntu
 
 ## Requirements
 
-Ansible 2.8 or higher is recommended.
+Ansible 2.9 or higher is recommended.
 
 ## Variables
 
