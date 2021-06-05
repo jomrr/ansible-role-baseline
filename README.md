@@ -1,6 +1,6 @@
 # ansible-role-baseline
 
-![GitHub](https://img.shields.io/github/license/jam82/ansible-role-baseline) [![Build Status](https://travis-ci.org/jam82/ansible-role-baseline.svg?branch=main)](https://travis-ci.org/jam82/ansible-role-baseline)
+![GitHub](https://img.shields.io/github/license/jam82/ansible-role-baseline) ![GitHub issues](https://img.shields.io/github/issues-raw/jam82/ansible-role-podman) ![Travis (.com) branch](https://img.shields.io/travis/com/jam82/ansible-role-baseline/main?label=ansible-lint%20latest) ![GitHub last commit](https://img.shields.io/github/last-commit/jam82/ansible-role-skeleton)
 
 **Ansible role for bootstrapping a machine for configuration by ansible.**
 
