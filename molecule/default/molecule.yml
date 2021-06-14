@@ -5,7 +5,7 @@
 dependency:
   name: galaxy
   options:
-    role-file: requirements.yml
+    requirements-file: requirements.yml
 driver:
   name: docker
 lint: |
@@ -13,14 +13,21 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
-  - name: baseline-alpine
+  - name: almalinux-baseline
+    image: "jam82/molecule-almalinux:latest"
+    pre_build_image: true
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+  - name: alpine-baseline
     image: "jam82/molecule-alpine:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
       - /tmp
       - /run
-  - name: baseline-amazonlinux
+  - name: amazonlinux-baseline
     image: "jam82/molecule-amazonlinux:latest"
     pre_build_image: true
     privileged: true
@@ -29,7 +36,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-arch
+  - name: arch-baseline
     image: "jam82/molecule-archlinux:latest"
     pre_build_image: true
     privileged: true
@@ -38,7 +45,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-centos
+  - name: centos-baseline
     image: "jam82/molecule-centos:latest"
     pre_build_image: true
     privileged: true
@@ -47,7 +54,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-debian
+  - name: debian-baseline
     image: "jam82/molecule-debian:latest"
     pre_build_image: true
     privileged: true
@@ -56,7 +63,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-fedora
+  - name: fedora-baseline
     image: "jam82/molecule-fedora:latest"
     pre_build_image: true
     privileged: true
@@ -65,7 +72,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-opensuse
+  - name: opensuse-baseline
     image: "jam82/molecule-opensuse:15"
     pre_build_image: true
     privileged: true
@@ -74,7 +81,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-tumbleweed
+  - name: tumbleweed-baseline
     image: "jam82/molecule-opensuse:tumbleweed"
     pre_build_image: true
     privileged: true
@@ -83,7 +90,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-oraclelinux
+  - name: oraclelinux-baseline
     image: "jam82/molecule-oraclelinux:latest"
     pre_build_image: true
     privileged: true
@@ -92,7 +99,7 @@ platforms:
       - /run
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - name: baseline-ubuntu
+  - name: ubuntu-baseline
     image: "jam82/molecule-ubuntu:latest"
     pre_build_image: true
     privileged: true
@@ -111,5 +118,19 @@ provisioner:
     group_vars:
       all:
         baseline_role_enabled: true
+scenario:
+  create_sequence:
+    - dependency
+    - create
+    - prepare
+  converge_sequence:
+    - converge
+  destroy_sequence:
+    - cleanup
+    - destroy
+  test_sequence:
+    - converge
+    - idempotence
+    - verify
 verifier:
   name: ansible

@@ -1,11 +1,12 @@
 # ansible-role-baseline
 
-![GitHub](https://img.shields.io/github/license/jam82/ansible-role-baseline) ![GitHub issues](https://img.shields.io/github/issues-raw/jam82/ansible-role-baseline) ![Travis (.com) branch](https://img.shields.io/travis/com/jam82/ansible-role-baseline/main?label=ansible-lint%20latest) ![GitHub last commit](https://img.shields.io/github/last-commit/jam82/ansible-role-baseline)
+![GitHub](https://img.shields.io/github/license/jam82/ansible-role-baseline) ![GitHub last commit](https://img.shields.io/github/last-commit/jam82/ansible-role-baseline) ![GitHub issues](https://img.shields.io/github/issues-raw/jam82/ansible-role-baseline) [![Molecule](https://github.com/jam82/ansible-role-baseline/actions/workflows/molecule.yml/badge.svg)](https://github.com/jam82/ansible-role-baseline/actions/workflows/molecule.yml)
 
 **Ansible role for bootstrapping a machine for configuration by ansible.**
 
 ## Supported Platforms
 
+- Almalinux
 - Alpine
 - Archlinux
 - CentOS
