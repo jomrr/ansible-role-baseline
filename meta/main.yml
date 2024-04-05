@@ -4,11 +4,11 @@
 
 galaxy_info:
   role_name: baseline
-  author: jam82
+  author: jomrr
   description: Ansible role for bootstrapping a machine for configuration by ansible.
   company: ''
 
-  issue_tracker_url: https://github.com/jam82/ansible-role-baseline/issues
+  issue_tracker_url: https://github.com/jomrr/ansible-role-baseline/issues
 
   license: "MIT"
 

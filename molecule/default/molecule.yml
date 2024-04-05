@@ -14,21 +14,21 @@ lint: |
   ansible-lint
 platforms:
   - name: almalinux-baseline
-    image: "jam82/molecule-almalinux:latest"
+    image: "jomrr/molecule-almalinux:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
       - /tmp
       - /run
   - name: alpine-baseline
-    image: "jam82/molecule-alpine:latest"
+    image: "jomrr/molecule-alpine:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
       - /tmp
       - /run
   - name: amazonlinux-baseline
-    image: "jam82/molecule-amazonlinux:latest"
+    image: "jomrr/molecule-amazonlinux:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -37,7 +37,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: arch-baseline
-    image: "jam82/molecule-archlinux:latest"
+    image: "jomrr/molecule-archlinux:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -46,7 +46,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: centos-baseline
-    image: "jam82/molecule-centos:latest"
+    image: "jomrr/molecule-centos:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -55,7 +55,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: debian-baseline
-    image: "jam82/molecule-debian:latest"
+    image: "jomrr/molecule-debian:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -64,7 +64,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: fedora-baseline
-    image: "jam82/molecule-fedora:latest"
+    image: "jomrr/molecule-fedora:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -73,7 +73,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: opensuse-baseline
-    image: "jam82/molecule-opensuse:15"
+    image: "jomrr/molecule-opensuse:15"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -82,7 +82,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: tumbleweed-baseline
-    image: "jam82/molecule-opensuse:tumbleweed"
+    image: "jomrr/molecule-opensuse:tumbleweed"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -91,7 +91,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: oraclelinux-baseline
-    image: "jam82/molecule-oraclelinux:latest"
+    image: "jomrr/molecule-oraclelinux:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
@@ -100,7 +100,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - name: ubuntu-baseline
-    image: "jam82/molecule-ubuntu:latest"
+    image: "jomrr/molecule-ubuntu:latest"
     pre_build_image: true
     privileged: true
     tmpfs:
