@@ -1,5 +1,5 @@
 ---
-# role: ansible-role-baseline
+# role: jomrr.baseline
 # file: molecule/default/molecule.yml
 
 dependency:

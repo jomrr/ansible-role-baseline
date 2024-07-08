@@ -1,5 +1,5 @@
 ---
-# role: ansible-role-baseline
+# role: jomrr.baseline
 # file: vars/main.yml
 
 baseline_pkg3:

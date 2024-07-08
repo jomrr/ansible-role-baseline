@@ -1,9 +1,0 @@
----
-# role: ansible-role-baseline
-# file: molecule/tox/collections.yml
-
-collections:
-  - community.docker
-  - community.general
-
-roles: []

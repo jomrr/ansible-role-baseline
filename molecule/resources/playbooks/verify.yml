@@ -1,5 +1,5 @@
 ---
-# role: ansible-role-baseline
+# role: jomrr.baseline
 # file: molecule/resources/playbooks/verify.yml
 
 - name: Verify
@@ -7,4 +7,4 @@
   become: true
   tasks:
     - name: "Gather facts"
-      gather_facts:
+      ansible.builtin.gather_facts:

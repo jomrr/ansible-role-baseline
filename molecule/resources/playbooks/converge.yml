@@ -1,5 +1,5 @@
 ---
-# role: ansible-role-baseline
+# role: jomrr.baseline
 # file: molecule/resources/playbooks/converge.yml
 
 - name: Converge
@@ -8,5 +8,5 @@
   gather_facts: false
   tasks:
     - name: "Include ansible-role-baseline"
-      include_role:
+      ansible.builtin.include_role:
         name: "ansible-role-baseline"
